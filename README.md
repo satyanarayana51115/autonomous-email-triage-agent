@@ -20,26 +20,26 @@ An enterprise-grade, multi-agent AI pipeline built using **CrewAI**, **Google Ge
 - **LLM**: Google Gemini (`gemini/gemini-3.5-flash`)
 - **Language**: Python 3.11+
 - **Environment Management**: `python-dotenv`
-
 ---
 ## 🧠 Multi-Agent Architecture
 ```mermaid
 flowchart TD
     A[📩 Incoming Email] --> B{🛡️ Junk Filter Agent}
     
-    subgraph S1 [Spam Stream]
-        B -->|Junk / Spam| C[🗑️ Trash: ACTION TRASHED]
-    end
-
-    subgraph S2 [Legitimate Processing Pipeline]
-        B -->|Legitimate| D[⚙️ Categorizer Agent]
-        
-        D -->|Hard: Outage / Legal Risk| E[👤 Human Review: LEAVE_FOR_HUMAN]
-        D -->|Easy: Pricing / FAQ| F[✍️ Response Writer Agent]
-        
-        E --> G[🎫 P1 Escalation Ticket Generated]
-        F --> H[✉️ Draft Reply: $99/mo + Calendly]
-    end
+    %% Branching
+    B -->|Junk / Spam| C[🗑️ Trash: ACTION TRASHED]
+    B -->|Legitimate| D[⚙️ Categorizer Agent]
+    
+    %% Spacer to keep trash away from escalation flow
+    C ~~~ D
+    
+    %% Second Tier Branching
+    D -->|Hard: Outage / Legal Risk| E[👤 Human Review: LEAVE_FOR_HUMAN]
+    D -->|Easy: Pricing / General FAQ| F[✍️ Response Writer Agent]
+    
+    %% Outcomes
+    E --> G[🎫 P1 Escalation Ticket Generated]
+    F --> H[✉️ Draft Reply: $99/mo + Calendly]
 ```
 ## 📊 Validated Edge-Case Scenarios
 
