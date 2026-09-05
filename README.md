@@ -45,21 +45,18 @@ flowchart TD
 ```
 
 ## 📊 Validated Edge-Case Scenarios
-```bash
 
-   | Scenario | Input Type | Decision / Action | Generated Output |
-   | :--- | :--- | :--- | :--- |
-   | **Scenario 1** | Commercial Pricing Inquiry (Rajesh) | `EASY_RESPONSE` | `report_1_easy_response.md` (Professional Draft Reply) |
-   | **Scenario 2** | Gift Card Phishing Email | `JUNK` | `report_2_junk_trashed.md` (`ACTION: TRASHED`) |
-   | **Scenario 3** | Live Outage & Legal Action Threat | `HARD_RESPONSE` | `report_3_hard_escalation.md` (`STATUS: LEAVE_FOR_HUMAN` P1 Ticket) |
----
+| Scenario | Input Type | Decision / Action | Generated Output |
+| :--- | :--- | :--- | :--- |
+| **Scenario 1** | Commercial Pricing Inquiry (Rajesh) | `EASY_RESPONSE` | `report_1_easy_response.md` (Professional Draft Reply) |
+| **Scenario 2** | Gift Card Phishing Email | `JUNK` | `report_2_junk_trashed.md` (`ACTION: TRASHED`) |
+| **Scenario 3** | Live Outage & Legal Action Threat | `HARD_RESPONSE` | `report_3_hard_escalation.md` (`STATUS: LEAVE_FOR_HUMAN` P1 Ticket) |
 
 ## ⚙️ How to Run Locally
-```bash
 
 1. **Clone the Repository:**
-   ```bash
+```bash
    git clone https://github.com/satyanarayana51115/autonomous-email-triage-agent.git
    cd autonomous-email-triage-agent
-   ```
+```
 
