@@ -26,7 +26,7 @@ An enterprise-grade, multi-agent AI pipeline built using **CrewAI**, **Google Ge
 ## 🧠 Multi-Agent Architecture
 
 ```mermaid
-flowchart LR
+flowchart TB
     A[Incoming Email] --> B{Junk Filter Agent}
     
     %% Junk Path
