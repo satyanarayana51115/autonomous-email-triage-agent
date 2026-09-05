@@ -56,6 +56,7 @@ flowchart TD
 ---
 
 ## ⚙️ How to Run Locally
+```bash
 
 1. **Clone the Repository:**
    ```bash
