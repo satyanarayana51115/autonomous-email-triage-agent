@@ -36,11 +36,32 @@ flowchart TD
     B -->|Legitimate| D[⚙️ Categorizer Agent]
     
     %% Categorization Decisions
-    D -->|Hard: Outage / Legal Risk| E[👤 Human Review: LEAVE_FOR_HUMAN]
+    D   -->|Hard: Outage / Legal Risk| E[👤 Human Review: LEAVE_FOR_HUMAN]
     D -->|Easy: Pricing / General FAQ| F[✍️ Response Writer Agent]
     
     %% Final Outcomes
     E --> G[🎫 P1 Escalation Ticket Generated]
     F --> H[✉️ Automated Draft Reply: $99/mo + Calendly]
 ```
+
+```bash
+---
+
+## 📊 Validated Edge-Case Scenarios
+
+| Scenario | Input Type | Decision / Action | Generated Output |
+| :--- | :--- | :--- | :--- |
+| **Scenario 1** | Commercial Pricing Inquiry (Rajesh) | `EASY_RESPONSE` | `report_1_easy_response.md` (Professional Draft Reply) |
+| **Scenario 2** | Gift Card Phishing Email | `JUNK` | `report_2_junk_trashed.md` (`ACTION: TRASHED`) |
+| **Scenario 3** | Live Outage & Legal Action Threat | `HARD_RESPONSE` | `report_3_hard_escalation.md` (`STATUS: LEAVE_FOR_HUMAN` P1 Ticket) |
+
+---
+
+## ⚙️ How to Run Locally
+
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/satyanarayana51115/autonomous-email-triage-agent.git
+   cd autonomous-email-triage-agent
+   ```
 
