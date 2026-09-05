@@ -59,4 +59,25 @@ flowchart TD
    git clone https://github.com/satyanarayana51115/autonomous-email-triage-agent.git
    cd autonomous-email-triage-agent
    ```
+2. **Setup Virtual Environment:**
+   ```
+   python -m venv venv
+   ```
+3. **On Windows:**
+   ```
+   .\venv\Scripts\activate
+   ```
+4. **Install Dependencies:**
+   ```
+   pip install -r requirements.txt
+   ```
+5. **Configure API Keys:**
+   ```
+   GEMINI_API_KEY=your_gemini_api_key_here
+   ```
+6. **Run the Code:**
+   ```
+   python main.py
+   ```
+   
 
