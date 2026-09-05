@@ -55,8 +55,8 @@ flowchart TD
 ## ⚙️ How to Run Locally
 
 1. **Clone the Repository:**
-```bash
+   ```bash
    git clone https://github.com/satyanarayana51115/autonomous-email-triage-agent.git
    cd autonomous-email-triage-agent
-```
+   ```
 
