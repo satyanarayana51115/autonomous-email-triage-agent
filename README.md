@@ -27,21 +27,20 @@ An enterprise-grade, multi-agent AI pipeline built using **CrewAI**, **Google Ge
 flowchart TD
     A[📩 Incoming Email] --> B{🛡️ Junk Filter Agent}
     
-    %% Junk Branch
-    B -->|Junk / Spam| C[🗑️ Trash: ACTION TRASHED]
-    
-    %% Legitimate Branch
-    B -->|Legitimate| D[⚙️ Categorizer Agent]
-    
-    %% Categorization Decisions
-    D   -->|Hard: Outage / Legal Risk| E[👤 Human Review: LEAVE_FOR_HUMAN]
-    D -->|Easy: Pricing / General FAQ| F[✍️ Response Writer Agent]
-    
-    %% Final Outcomes
-    E --> G[🎫 P1 Escalation Ticket Generated]
-    F --> H[✉️ Automated Draft Reply: $99/mo + Calendly]
-```
+    subgraph S1 [Spam Stream]
+        B -->|Junk / Spam| C[🗑️ Trash: ACTION TRASHED]
+    end
 
+    subgraph S2 [Legitimate Processing Pipeline]
+        B -->|Legitimate| D[⚙️ Categorizer Agent]
+        
+        D -->|Hard: Outage / Legal Risk| E[👤 Human Review: LEAVE_FOR_HUMAN]
+        D -->|Easy: Pricing / FAQ| F[✍️ Response Writer Agent]
+        
+        E --> G[🎫 P1 Escalation Ticket Generated]
+        F --> H[✉️ Draft Reply: $99/mo + Calendly]
+    end
+```
 ## 📊 Validated Edge-Case Scenarios
 
 | Scenario | Input Type | Decision / Action | Generated Output |
