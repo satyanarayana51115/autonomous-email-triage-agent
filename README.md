@@ -44,10 +44,8 @@ flowchart TD
     F --> H[✉️ Automated Draft Reply: $99/mo + Calendly]
 ```
 
-```bash
----
-
 ## 📊 Validated Edge-Case Scenarios
+```bash
 
 | Scenario | Input Type | Decision / Action | Generated Output |
 | :--- | :--- | :--- | :--- |
