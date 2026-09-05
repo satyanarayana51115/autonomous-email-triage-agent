@@ -22,9 +22,7 @@ An enterprise-grade, multi-agent AI pipeline built using **CrewAI**, **Google Ge
 - **Environment Management**: `python-dotenv`
 
 ---
-
 ## 🧠 Multi-Agent Architecture
-
 ```mermaid
 flowchart TD
     A[📩 Incoming Email] --> B{🛡️ Junk Filter Agent}
