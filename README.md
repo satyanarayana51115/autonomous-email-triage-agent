@@ -26,20 +26,21 @@ An enterprise-grade, multi-agent AI pipeline built using **CrewAI**, **Google Ge
 ## 🧠 Multi-Agent Architecture
 
 ```mermaid
-flowchart TB
-    A[Incoming Email] --> B{Junk Filter Agent}
+flowchart TD
+    A[📩 Incoming Email] --> B{🛡️ Junk Filter Agent}
     
-    %% Junk Path
-    B -- Junk / Spam --> C[🗑️ Trash: ACTION TRASHED]
+    %% Junk Branch
+    B -->|Junk / Spam| C[🗑️ Trash: ACTION TRASHED]
     
-    %% Legitimate Path
-    B -- Legitimate --> D[⚙️ Categorizer Agent]
+    %% Legitimate Branch
+    B -->|Legitimate| D[⚙️ Categorizer Agent]
     
-    %% Categorization Paths
-    D -- Hard: Escalation --> E[👤 Human Review: LEAVE_FOR_HUMAN]
-    D -- Easy: Standard Query --> F[✍️ Writer Agent]
+    %% Categorization Decisions
+    D -->|Hard: Outage / Legal Risk| E[👤 Human Review: LEAVE_FOR_HUMAN]
+    D -->|Easy: Pricing / General FAQ| F[✍️ Response Writer Agent]
     
-    %% Final Actions
-    E --> G[🎫 P1 Escalation Ticket]
-    F --> H[✉️ Auto Reply Draft: $99/mo + Calendly]
+    %% Final Outcomes
+    E --> G[🎫 P1 Escalation Ticket Generated]
+    F --> H[✉️ Automated Draft Reply: $99/mo + Calendly]
 ```
+
